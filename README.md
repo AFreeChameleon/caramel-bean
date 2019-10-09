@@ -3,6 +3,12 @@
 ## Introduction
 Caramel Bean is a templating tool that I use to create a starter template for projects rather than having to write out a bunch of code I already have before, but rather than just cloning a repo, this is more of a building block style. Similar to the artisan command PHP uses.
 
+## Installation
+Just install it as a global module since it is on npm
+```bash
+npm i -g caramel-bean
+```
+
 ## init
 ```bash
 caramel init
