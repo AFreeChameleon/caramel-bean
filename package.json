@@ -1,0 +1,14 @@
+{
+  "name": "caramel-bean",
+  "version": "1.0.8",
+  "description": "Templating tool",
+  "main": "main.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Ben Evans",
+  "license": "ISC",
+  "dependencies": {},
+  "bin": {
+    "caramel": "main.js"
+  }
+}
