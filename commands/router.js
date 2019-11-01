@@ -1,16 +1,24 @@
-exports.makeRouter = (name) => {
-    const fs = require('fs');
+const fs = require("fs");
 
-if (fs.existsSync(`./routes/${name}`)) {
-    console.log('Router  exists');
-} else {
+exports.makeRouter = name => {
+  if (fs.existsSync(`./routes/${name}.js`)) {
+    console.log("Router already exists");
+  } else {
+    console.log(`Creating ./routes/${name}.js...`);
+    fs.writeFileSync(
+      `./routes/${name}.js`,
+      `// Controllers\nconst express = require('express');\nconst router = express.Router();\n\nmodule.exports = router;`
+    );
+    console.log(`Created ${name}.js`);
+  }
+};
 
-fs.writeFileSync(`./routes/${name}.js`, `// Controllers
-const express = require('express');
-const router = express.Router();
-
-module.exports = router;
-`);
-
-}
-}
+exports.removeRouter = name => {
+  if (fs.existsSync(`./routes/${name}.js`)) {
+    console.log(`Deleting ./routes/${name}.js...`);
+    fs.unlinkSync(`./routes/${name}.js`);
+    console.log(`Deleted ${name}.js!`);
+  } else {
+    console.log(`${name}.js Does not exist. please try again`);
+  }
+};

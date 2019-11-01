@@ -1,18 +1,27 @@
 # Caramel Bean
 
+### Added features
+
+- Removed indentation errors (hopefully)
+
 ## Introduction
+
 Caramel Bean is a templating tool that I use to create a starter template for projects rather than having to write out a bunch of code I already have before, but rather than just cloning a repo, this is more of a building block style. Similar to the artisan command PHP uses.
 
 ## Installation
+
 Just install it as a global module since it is on npm
+
 ```bash
 npm i -g caramel-bean
 ```
 
 ## init
+
 ```bash
 caramel init
 ```
+
 This will create a starter template for you. This should be run in the directory after the directory is initialised.
 
 We firstly create a server.js file which is the main file and add code that creates a very basic server through the express module.
@@ -25,22 +34,26 @@ After that, we create a views directory which is the directory the server.js fil
 
 Dependencies installed:
 
-* express
-* express-ejs
-* express-ejs-layouts
-* ejs
-* nodemon
+- express
+- express-ejs
+- express-ejs-layouts
+- ejs
+- nodemon
 
 ## server
+
 ```bash
-caramel server start
+npm start
 ```
 
 This will start the server on the port in server.js (default is 3000)
 
 ## auth
+
+### init
+
 ```bash
-caramel auth
+caramel auth init
 ```
 
 This will add passport authentication into the project for you, accounts are stored in MongoDB so you will have to add your URL which looks something like this:
@@ -51,12 +64,12 @@ mongodb+srv://<username>:<password>@<databasename>-g5han.mongodb.net/test?retryW
 
 The directories that are made are:
 
-* /auth
-* /auth/controllers
-* /auth/models
-* /auth/routes
-* /views/partials
-* /auth/config
+- /auth
+- /auth/controllers
+- /auth/models
+- /auth/routes
+- /views/partials
+- /auth/config
 
 To start off with, in the /auth/config/ directory we make a file called auth.js which has a function called ensureAuthenticated which checks if the current user is authenticated and if they aren't, redirect them back to /auth/login. Secondly, in the /auth/config directory, passport.js with a couple of utility functions, such as matching the passwords instead of decrypting.
 
@@ -72,14 +85,21 @@ Finally, in the /auth/config directory, your mongodb uri will be entered into a 
 
 Dependencies Installed:
 
-* mongoose
-* connect-flash
-* express-session
-* passport
-* bcryptjs
-* passport-local
+- mongoose
+- connect-flash
+- express-session
+- passport
+- bcryptjs
+- passport-local
+
+### remove
+
+```bash
+caramel auth remove
+```
 
 ## react
+
 ```bash
 caramel react init <react-app-name>
 ```
@@ -93,6 +113,7 @@ npx create-react-app <react-app-name>
 We will add a bunch more integration because react is awesome and anyone who says otherwise is wrong >:( !
 
 ## model
+
 ```bash
 caramel model make <model-name>
 ```
@@ -100,6 +121,7 @@ caramel model make <model-name>
 Creates a mongoose model under the name specified in the /models directory
 
 ## router
+
 ```bash
 caramel router make <router-name>
 ```
@@ -107,6 +129,7 @@ caramel router make <router-name>
 Creates a file in the /routes directory under the name specified with the code to get started
 
 ## controller
+
 ```bash
 caramel controller make <controller-name>
 ```
@@ -114,6 +137,7 @@ caramel controller make <controller-name>
 Creates a file in the /controller directory under the name specified
 
 ## view
+
 ```bash
 caramel view make <view-name>
 ```
@@ -121,6 +145,7 @@ caramel view make <view-name>
 Creates a file in the /views directory under the name specified
 
 ## template
+
 ```bash
 caramel template make <template-name>
 ```

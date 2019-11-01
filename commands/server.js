@@ -1,5 +1,5 @@
-const {exec} = require('child_process');
+const { exec } = require("child_process");
 
 exports.start = () => {
-    exec('nodemon server.js')
-}
+  exec("nodemon server.js");
+};
