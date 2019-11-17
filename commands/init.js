@@ -1,13 +1,13 @@
 const fs = require("fs");
 const reqpro = require("request-promise");
-let url = "";
-reqpro(
-  "https://raw.githubusercontent.com/BeansJS/caramel-bean-template/master/urls.json"
-)
-  .then(content => {
-    url = JSON.parse(content);
-  })
-  .catch(err => console.log(err));
+let url = fs.readFileSync("./urls.json").toJSON();
+// reqpro(
+//   "https://raw.githubusercontent.com/BeansJS/caramel-bean-template/master/urls.json"
+// )
+//   .then(content => {
+//     url = JSON.parse(content);
+//   })
+//   .catch(err => console.log(err));
 
 exports.init = () => {
   if (fs.existsSync("./package.json")) {
