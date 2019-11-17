@@ -1,6 +1,13 @@
 const fs = require("fs");
 const reqpro = require("request-promise");
-const url = JSON.parse(fs.readFileSync("./urls.json"));
+let url = "";
+reqpro(
+  "https://raw.githubusercontent.com/BeansJS/caramel-bean-template/master/urls.json"
+)
+  .then(content => {
+    url = JSON.parse(content);
+  })
+  .catch(err => console.log(err));
 
 exports.init = () => {
   if (fs.existsSync("./package.json")) {
@@ -16,7 +23,7 @@ exports.init = () => {
       .catch(err => console.log(err));
   }
   // Making server.js
-  reqpro(initUrl.server)
+  reqpro(url.server)
     .then(html => {
       console.log("Making ./server.js");
       fs.writeFileSync("server.js", html);
@@ -34,7 +41,7 @@ exports.init = () => {
 
   // Making routes
   fs.mkdirSync("./routes");
-  reqpro(initUrl.routes.index).then(html => {
+  reqpro(url.routes.index).then(html => {
     console.log("Loading ./routes/index.js");
     fs.writeFileSync("./routes/index.js", html);
   });

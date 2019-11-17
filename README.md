@@ -1,8 +1,9 @@
 # Caramel Bean
 
-### Added features
+### What's New
 
 - Removed indentation errors (hopefully)
+- Made code a bit nicer and more scalable
 
 ## Introduction
 

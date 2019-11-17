@@ -1,9 +1,11 @@
 {
   "name": "caramel-bean",
-  "version": "1.0.18",
-  "description": "Templating tool",
+  "version": "1.0.21",
+  "description": "Templating tool, experimental at the moment, will keep you updated",
   "main": "main.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "keywords": [],
   "author": "Ben Evans",
   "license": "ISC",
